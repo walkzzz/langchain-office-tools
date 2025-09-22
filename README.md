@@ -228,11 +228,19 @@ langchain-office-tools/
   - 文件移动和删除操作
   - 文件压缩和解压功能
 
+- **文档转换工具**
+  - PDF文本提取
+  - Office文档转Markdown
+  - 文件压缩和解压操作
+
 ### 启动服务
 
 ```bash
-# 启动MCP服务
+# 启动主MCP服务
 python src/core/mcp_server.py
+
+# 启动库专用MCP服务
+python src/libs/main_mcp_server.py
 ```
 
 ### 使用示例
@@ -260,6 +268,55 @@ result = create_word_document(
 ```
 
 更多使用示例请查看 `examples/client_example.py` 文件。
+
+## 库专用MCP服务器
+
+本项目为每个办公库提供了独立的MCP服务器实现，以支持更细粒度的工具调用：
+
+### 支持的库
+
+1. **pypdf** - PDF处理库
+   - 文本提取
+   - PDF合并
+   - PDF分割
+
+2. **xlsxwriter** - Excel处理库
+   - 创建Excel工作簿
+   - 创建格式化Excel
+   - 添加图表到Excel
+
+3. **markitdown** - 文档转Markdown库
+   - 单个文件转换
+   - 批量文件转换
+   - 获取支持的文件类型
+
+4. **zipfile** - 压缩文件处理库
+   - 创建ZIP压缩文件
+   - 解压ZIP文件
+   - 列出ZIP内容
+   - 添加文件到ZIP
+   - 提取特定文件
+
+### 启动库专用服务器
+
+每个库都有独立的MCP服务器实现，可以通过以下方式启动：
+
+```bash
+# 启动pypdf MCP服务器
+python src/libs/pypdf_mcp.py
+
+# 启动xlsxwriter MCP服务器
+python src/libs/xlsxwriter_mcp.py
+
+# 启动markitdown MCP服务器
+python src/libs/markitdown_mcp.py
+
+# 启动zipfile MCP服务器
+python src/libs/zipfile_mcp.py
+
+# 启动所有库的主MCP服务器
+python src/libs/main_mcp_server.py
+```
 
 ## 文档
 
