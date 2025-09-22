@@ -4,9 +4,37 @@ __pycache__/
 build/
 dist/
 wheels/
-*.egg-info
+*.egg-info/
+*.egg
 
 # Virtual environments
-.venv
+.venv/
+venv/
+env/
 py313/
-*.exe
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Configuration files
+config/config.yaml
+
+# Log files
+*.log
+
+# Distribution / packaging
+.pytest_cache/
+.coverage
+htmlcov/

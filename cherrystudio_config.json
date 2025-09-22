@@ -1,0 +1,285 @@
+{
+  "name": "Langchain Office Tools",
+  "description": "集成了多种大语言模型的办公工具包，支持Word、Excel、PPT等办公软件操作",
+  "version": "1.0.0",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8001,
+    "protocol": "http",
+    "endpoint": "/mcp"
+  },
+  "models": [
+    {
+      "provider": "openai",
+      "name": "OpenAI",
+      "models": [
+        "gpt-4o-mini",
+        "gpt-4",
+        "gpt-3.5-turbo"
+      ]
+    },
+    {
+      "provider": "qwen",
+      "name": "通义千问",
+      "models": [
+        "qwen-turbo",
+        "qwen-plus",
+        "qwen-max"
+      ]
+    },
+    {
+      "provider": "deepseek",
+      "name": "DeepSeek",
+      "models": [
+        "deepseek-chat",
+        "deepseek-coder"
+      ]
+    },
+    {
+      "provider": "moonshot",
+      "name": "Moonshot AI",
+      "models": [
+        "moonshot-v1-8k",
+        "moonshot-v1-32k",
+        "moonshot-v1-128k"
+      ]
+    },
+    {
+      "provider": "modelscope",
+      "name": "ModelScope",
+      "models": [
+        "qwen-turbo",
+        "qwen-plus",
+        "qwen-max"
+      ]
+    },
+    {
+      "provider": "zhipu",
+      "name": "智谱AI",
+      "models": [
+        "glm-4",
+        "glm-4v",
+        "glm-3-turbo"
+      ]
+    },
+    {
+      "provider": "anthropic",
+      "name": "Anthropic",
+      "models": [
+        "claude-3-opus",
+        "claude-3-sonnet",
+        "claude-3-haiku"
+      ]
+    },
+    {
+      "provider": "siliconflow",
+      "name": "SiliconFlow",
+      "models": [
+        "Qwen/Qwen1.5-7B-Chat",
+        "Qwen/Qwen1.5-14B-Chat",
+        "THUDM/chatglm3-6b"
+      ]
+    },
+    {
+      "provider": "ollama",
+      "name": "Ollama (本地模型)",
+      "models": [
+        "llama3",
+        "mistral",
+        "phi3"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "create_word_document",
+      "description": "创建Word文档",
+      "parameters": {
+        "content": {
+          "type": "string",
+          "description": "文档内容"
+        },
+        "filename": {
+          "type": "string",
+          "description": "文件名（不含扩展名）"
+        },
+        "save_path": {
+          "type": "string",
+          "description": "保存路径",
+          "default": "./"
+        }
+      }
+    },
+    {
+      "name": "create_excel_spreadsheet",
+      "description": "创建Excel电子表格",
+      "parameters": {
+        "data": {
+          "type": "array",
+          "description": "表格数据（二维列表）"
+        },
+        "filename": {
+          "type": "string",
+          "description": "文件名（不含扩展名）"
+        },
+        "save_path": {
+          "type": "string",
+          "description": "保存路径",
+          "default": "./"
+        }
+      }
+    },
+    {
+      "name": "create_powerpoint_presentation",
+      "description": "创建PowerPoint演示文稿",
+      "parameters": {
+        "slides": {
+          "type": "array",
+          "description": "幻灯片数据列表，每个元素包含\"title\"和\"content\"键"
+        },
+        "filename": {
+          "type": "string",
+          "description": "文件名（不含扩展名）"
+        },
+        "save_path": {
+          "type": "string",
+          "description": "保存路径",
+          "default": "./"
+        }
+      }
+    },
+    {
+      "name": "list_files_in_directory",
+      "description": "列出目录中的文件",
+      "parameters": {
+        "directory": {
+          "type": "string",
+          "description": "目录路径",
+          "default": "./"
+        }
+      }
+    },
+    {
+      "name": "read_file_content",
+      "description": "读取文件内容",
+      "parameters": {
+        "file_path": {
+          "type": "string",
+          "description": "文件路径"
+        }
+      }
+    },
+    {
+      "name": "move_file",
+      "description": "移动文件",
+      "parameters": {
+        "source_path": {
+          "type": "string",
+          "description": "源文件路径"
+        },
+        "destination_path": {
+          "type": "string",
+          "description": "目标文件路径"
+        }
+      }
+    },
+    {
+      "name": "delete_file",
+      "description": "删除文件",
+      "parameters": {
+        "file_path": {
+          "type": "string",
+          "description": "文件路径"
+        }
+      }
+    },
+    {
+      "name": "compress_files",
+      "description": "压缩文件",
+      "parameters": {
+        "file_paths": {
+          "type": "array",
+          "description": "要压缩的文件路径列表"
+        },
+        "zip_path": {
+          "type": "string",
+          "description": "压缩文件保存路径"
+        }
+      }
+    },
+    {
+      "name": "extract_archive",
+      "description": "解压缩文件",
+      "parameters": {
+        "archive_path": {
+          "type": "string",
+          "description": "压缩文件路径"
+        },
+        "extract_to": {
+          "type": "string",
+          "description": "解压目录",
+          "default": "./"
+        }
+      }
+    },
+    {
+      "name": "create_task_list",
+      "description": "创建日常任务列表",
+      "parameters": {
+        "tasks": {
+          "type": "array",
+          "description": "任务列表，每个任务包含\"title\"(标题), \"description\"(描述), \"priority\"(优先级), \"due_date\"(截止日期)等字段"
+        },
+        "filename": {
+          "type": "string",
+          "description": "文件名（不含扩展名）"
+        },
+        "save_path": {
+          "type": "string",
+          "description": "保存路径",
+          "default": "./"
+        }
+      }
+    },
+    {
+      "name": "add_task_to_list",
+      "description": "向现有任务列表添加新任务",
+      "parameters": {
+        "task_list_path": {
+          "type": "string",
+          "description": "任务列表文件路径"
+        },
+        "new_task": {
+          "type": "object",
+          "description": "新任务信息，包含\"title\", \"description\", \"priority\", \"due_date\"等字段"
+        }
+      }
+    },
+    {
+      "name": "get_task_list_summary",
+      "description": "获取任务列表摘要信息",
+      "parameters": {
+        "task_list_path": {
+          "type": "string",
+          "description": "任务列表文件路径"
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "file://documents",
+      "description": "列出文档目录中的文件"
+    },
+    {
+      "uri": "file://desktop",
+      "description": "列出桌面目录中的文件"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "office_assistant",
+      "description": "办公工具助手提示词模板"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+﻿# 配置文件示例
+# 请将此文件复制为 config.yaml 并填写您的API密钥
+
+# 默认模型提供商和模型
+default_provider: openai
+default_model: gpt-4o-mini
+
+# 各模型提供商的API密钥配置
+api_keys:
+  openai: "YOUR_OPENAI_API_KEY"      # 请在OpenAI平台获取API密钥: https://platform.openai.com/api-keys
+  qwen: "YOUR_QWEN_API_KEY"          # 请在阿里云百炼平台获取API密钥: https://help.aliyun.com/zh/bailian
+  deepseek: "YOUR_DEEPSEEK_API_KEY"  # 请在DeepSeek平台获取API密钥: https://platform.deepseek.com/
+  moonshot: "YOUR_MOONSHOT_API_KEY"  # 请在Moonshot平台获取API密钥: https://platform.moonshot.cn/console/api-keys
+  modelscope: "YOUR_MODELSCOPE_API_KEY"  # 请在ModelScope平台获取API密钥: https://modelscope.cn/settings/api
+  zhipu: "YOUR_ZHIPU_API_KEY"        # 请在智谱平台获取API密钥: https://bigmodel.cn/usercenter/apikeys
+  anthropic: "YOUR_ANTHROPIC_API_KEY"  # 请在Anthropic平台获取API密钥: https://console.anthropic.com/settings/keys
+  siliconflow: "YOUR_SILICONFLOW_API_KEY"  # 请在SiliconFlow平台获取API密钥: https://cloud.siliconflow.cn/account/ak
+  ollama: "YOUR_OLLAMA_API_KEY"      # 本地模型，通常不需要API密钥
+
+# 模型参数配置
+model_params:
+  temperature: 0.7
+  max_tokens: 1000
+  top_p: 1.0

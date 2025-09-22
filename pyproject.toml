@@ -1,7 +1,7 @@
 [project]
 name = "langchain-office-tools"
 version = "0.1.0"
-description = "Add your description here"
+description = "A toolkit for integrating multiple large language models, designed for office scenarios."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -9,4 +9,16 @@ dependencies = [
     "langgraph>=0.6.7",
     "mcp[cli]>=1.14.1",
     "modelscope>=1.30.0",
+    "pyyaml>=6.0",
+    "openai>=1.57.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "pre-commit>=2.17.0",
+    "jupyter>=1.0.0",
 ]

@@ -1,0 +1,22 @@
+# 模型配置文件
+
+# 默认模型提供商和模型
+default_provider: "moonshot"
+default_model: "moonshot-v1-128k"
+
+# 各模型提供商的API密钥配置
+api_keys:
+  openai: "YOUR_OPENAI_API_KEY"
+  qwen: "YOUR_QWEN_API_KEY"
+  deepseek: "sk-7fffbf192f79415b9d9a69a8f3e7e626"
+  moonshot: "sk-YOQ5WPPB4GKWWB7Gs01Tx0rSe0nXEv6tUP29b7E4PYj51vTA"
+  modelscope: "ms-ef353a1a-27c4-4dcc-9ecc-6e65741ac39f"
+  zhipu: "52f4c0db39654f669167144fbde65a45.msz2S82UeJdjHjTZ"  
+  anthropic: "YOUR_ANTHROPIC_API_KEY"
+  siliconflow: "sk-fmfkwnpuwoiizyjdbhiloyfwivuavtmzngkercjaprbbvcfj"
+
+# 模型参数配置
+model_params:
+  temperature: 0.7
+  max_tokens: 1000
+  top_p: 1.0

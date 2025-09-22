@@ -1,0 +1,35 @@
+{
+  "tasks": [
+    {
+      "title": "完成项目报告",
+      "description": "完成季度项目进度报告",
+      "priority": "high",
+      "due_date": "2025-04-10",
+      "status": "pending"
+    },
+    {
+      "title": "准备会议材料",
+      "description": "为下周的团队会议准备演示材料",
+      "priority": "medium",
+      "due_date": "2025-04-08",
+      "status": "pending"
+    },
+    {
+      "title": "回复客户邮件",
+      "description": "回复重要客户的技术咨询邮件",
+      "priority": "high",
+      "due_date": "2025-04-06",
+      "status": "completed"
+    },
+    {
+      "title": "安排团队建设活动",
+      "description": "组织本月的团队建设活动",
+      "priority": "low",
+      "due_date": "2025-04-15",
+      "status": "pending"
+    }
+  ],
+  "created_at": "2025-04-05",
+  "total_tasks": 4,
+  "pending_tasks": 3
+}

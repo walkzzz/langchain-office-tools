@@ -1,0 +1,30 @@
+{
+  "server": {
+    "name": "LangchainOfficeTools",
+    "host": "127.0.0.1",
+    "port": 8001,
+    "protocol": "http",
+    "endpoint": "/mcp"
+  },
+  "tools_count": 12,
+  "registered_tools": [
+    "create_word_document",
+    "create_excel_spreadsheet",
+    "create_powerpoint_presentation",
+    "list_files_in_directory",
+    "read_file_content",
+    "move_file",
+    "delete_file",
+    "compress_files",
+    "extract_archive",
+    "create_task_list",
+    "add_task_to_list",
+    "get_task_list_summary"
+  ],
+  "prompts": [
+    {
+      "name": "office_assistant",
+      "description": "办公助手提示词模板"
+    }
+  ]
+}

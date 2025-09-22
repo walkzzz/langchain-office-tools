@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "langchain-office-tools": {
+      "command": "python",
+      "args": [
+        "src/core/mcp_server.py"
+      ]
+    }
+  }
+}
